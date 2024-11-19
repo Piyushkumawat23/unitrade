@@ -44,8 +44,8 @@ function App({ Component, pageProps }) {
       <BrowserRouter>
         <AuthListener />
         <Routes>
-     
-        <Route
+
+          <Route
             path="/"
             element={!token ? <Navigate to="/signup" /> : <Navigate to="/home" />}
           />

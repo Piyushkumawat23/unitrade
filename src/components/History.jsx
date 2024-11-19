@@ -16,7 +16,7 @@ console.log(transactions);
 
 const groupTransactionsByDate = (transactions) => {
   if (!transactions || transactions.length === 0) {
-    return {}; // Return empty object if transactions is empty
+    return {}; // Return empty object if transactions 
   }
   return transactions.reduce((acc, transaction) => {
     const date = new Date(transaction.date_entered).toLocaleDateString();

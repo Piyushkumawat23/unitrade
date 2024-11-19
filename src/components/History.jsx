@@ -10,7 +10,6 @@ const TransactionHistory = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const dispatch = useDispatch();
- // Retrieve history data and loading state from Redux store
  const historyData = useSelector((state) => state.apiData.data);
  const transactions = historyData && historyData.history && historyData.history.data 
 console.log(transactions);

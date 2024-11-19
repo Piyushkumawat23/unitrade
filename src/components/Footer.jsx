@@ -13,7 +13,6 @@ function Footer() {
   const location = useLocation(); // To get the current path
   const [activePage, setActivePage] = useState('home'); // State to track the active page
 
-  // Effect to set active page based on the current location
   useEffect(() => {
     const path = location.pathname;
     if (path === '/home') {

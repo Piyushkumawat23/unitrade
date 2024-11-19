@@ -41,34 +41,24 @@
 
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import path from "path"; // Import for resolving paths if needed
 
 export default defineConfig({
-  server: {
-    proxy: {
-      '/api': { 
-        target: "https://telegram-bot-by30.onrender.com/api/v1", 
-        changeOrigin: true, 
-        rewrite: (path) => path.replace(/^\/api/, ''), 
-      },
-    },
-  },
   plugins: [react()],
   build: {
-    chunkSizeWarningLimit: 1000, // Increase chunk size limit to avoid warnings
-    rollupOptions: {
-      output: {
-        manualChunks: undefined, // Disable manual chunking
-      },
-    },
+    chunkSizeWarningLimit: 1000,
   },
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src'), // Optional alias for cleaner imports
+  server: {
+    proxy: {
+      '/api': {
+        target: "https://telegram-bot-by30.onrender.com/api/v1",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
     },
   },
   preview: {
-    port: 5000, // Ensure preview server runs on a specific port
+    port: 5000,
   },
 });
+
 
